@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-function Home() {
+export default function Home() {
   return (
     <>
       <Head>
@@ -115,5 +115,3 @@ function Home() {
     </>
   );
 }
-
-export default withDatabase(Home);
