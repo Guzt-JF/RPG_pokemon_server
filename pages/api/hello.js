@@ -1,7 +1,7 @@
-import withDatabase from '../../lib/withDatabase';
+import withDatabase from "../../lib/withDatabase";
 
 async function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' });
+  res.status(200).json({ name: "John Doe" });
 }
 
 export default withDatabase(handler);

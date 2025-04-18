@@ -1,0 +1,145 @@
+"target":[
+    {
+        "name": "target",
+        "effect": "ally"
+    },
+    {
+        "name": "target",
+        "effect": "one_ally"
+    },
+    {
+        "name": "target",
+        "effect": "all_ally"
+    },
+    {
+        "name": "target",
+        "effect": "foe"
+    },
+    {
+        "name": "target",
+        "effect": "random_foe"
+    },
+    {
+        "name": "target",
+        "effect": "all_foe"
+    },
+]
+
+"chance_dice":[
+    {
+        "name": "chance_dice",
+        "type": "buff",
+        "sucesses": 1,
+        "status": "str",
+        "value": 1,
+        "guarranteed": false
+    },
+    {
+        "name": "chance_dice",
+        "type": "condition",
+        "sucesses": 1,
+        "status": "burn",
+        "guarranteed": false
+    }
+]
+
+"heal":[
+    {
+        "name":"heal",
+        "type":"basic"
+    },
+    
+    {
+        "name":"heal",
+        "type":"complete"
+    },
+    {
+        "name":"heal",
+        "type":"custom",
+        "value": 1
+    }
+]
+
+"weather":[
+    {
+        "name": "weather",
+        "type": "sunny"
+    },
+    {
+        "name": "weather",
+        "type": "rain"
+    },
+    {
+        "name": "weather",
+        "type": "haze"
+    },
+    {
+        "name": "weather",
+        "type": "wind"
+    },
+]
+
+"priority":[
+    {
+        "name": "priority",
+        "value": 1
+    },
+]
+
+"succesive":[
+    {
+        "name": "succesive",
+        "type": "double"
+    },
+    {
+        "name": "succesive",
+        "type": "multiple"
+    },
+]
+
+"accuracy":[
+    {
+        "name": "accuracy",
+        "value": 1
+    },
+]
+
+
+"others":[
+    {
+        "name": "block"
+    },
+    {
+        "name": "charge"
+    },
+    {
+        "name": "fist_based"
+    },
+    {
+        "name": "high_critical"
+    },
+    {
+        "name": "lethal"
+    },
+    {
+        "name": "must_recharge"
+    },
+    {
+        "name": "never_fail"
+    },
+    {
+        "name": "rampage"
+    },
+    {
+        "name": "recoil"
+    },
+    {
+        "name": "shield"
+    },
+    {
+        "name": "sound_based"
+    },
+    {
+        "name": "switcher"
+    }
+]
