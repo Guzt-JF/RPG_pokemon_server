@@ -14,9 +14,9 @@ export function middleware(req) {
   const token = authHeader.split(" ")[1];
   console.log(token)
   console.log(URL_KEY)
-  if (token !== URL_KEY) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+  // if (token !== URL_KEY) {
+  //   return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  // }
 
   const response = NextResponse.next();
   response.headers.set("X-Custom-Header", "MyGlobalMiddleware");
