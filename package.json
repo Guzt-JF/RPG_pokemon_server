@@ -10,6 +10,7 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "mongoose": "^8.13.2",
     "next": "15.3.0",
     "react": "^19.0.0",
