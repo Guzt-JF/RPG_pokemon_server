@@ -19,7 +19,7 @@ async function insertPkmn(data) {
 
 async function handler(req, res) {
   try {
-    console.log("Request method:");
+    console.log(req.body);
     let data = await insertPkmn(req.body);
 
     console.log(data);

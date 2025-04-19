@@ -6,6 +6,11 @@ const PkmnSchema = new Schema({
   attacks: [Number],
   trainer_id: Number,
   nickname: String,
+  ranges: [{
+    name:String,
+    value:Number,
+    color:String,
+  }]
 });
 
 // Check if the model already exists before defining it

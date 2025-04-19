@@ -14,8 +14,8 @@ async function getPkmn(query) {
 
 async function handler(req, res) {
   try {
-    console.log("Request method:");
     let data = await getPkmn(req.body);
+    console.log(data);
 
     if (!data) {
       res.status(404).json({ error: "Pokémon not found" });
