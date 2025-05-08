@@ -5,31 +5,13 @@ import Pkmn from "../../../schemas/PKMN.js";
 async function getPkmn(query) {
   try {
     // Find the Pokémon based on the query
-    return await Pkmn.find(query);
+    return await Pkmn.find(query, "id_dex id nickname trainer_id");
   } catch (error) {
     console.error("Error retrieving Pokémon:", error);
     throw error;
   }
 }
 
-async function randomFix(data){
-  try {
-    const data = []
-    data.forEach(element => {
-      element.ranking = 1;
-      // element.base_stats = element.ranges;
-      element.base_stats = [];
-      element.battles_won = 0;
-      element.obs = '';
-    });
-
-    return data;
-    
-  } catch (error) {
-    console.error("Error retrieving Pokémon:", error);
-    throw error;
-  }
-}
 
 async function handler(req, res) {
   try {

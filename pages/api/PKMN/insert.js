@@ -5,13 +5,16 @@ import Pkmn from "../../../schemas/PKMN.js";
 async function insertPkmn(data) {
   try {
     // Create a new Pokémon document
+    console.log(data);
     const newPkmn = new Pkmn(data);
 
     // Save the document to the database
     const result = await newPkmn.save();
+    console.log(result);
 
     return result;
   } catch (error) {
+    console.log(error);
     console.error("Error inserting Pokémon:", error);
     throw error;
   }

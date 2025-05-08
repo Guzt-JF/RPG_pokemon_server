@@ -1,15 +1,18 @@
 import withDatabase from "../../../lib/withDatabase";
 import Pkmn from "../../../schemas/PKMN.js";
 
-// Function to udpate a Pokémon into the database
-async function updatePkmn(data) {
+// Function to delete a Pokémon into the database
+async function deletePkmn(data) {
   try {
-    // Find the Pokémon by ID and update its data
-    const result = await Pkmn.findByIdAndUpdate(data.id, data, { new: true });
+    // Create a new Pokémon document
+    const newPkmn = new Pkmn(data);
+
+    // Save the document to the database
+    const result = await Pkmn.findByIdAndDelete(data.id);
 
     return result;
   } catch (error) {
-    console.error("Error udpating Pokémon:", error);
+    console.error("Error deleting Pokémon:", error);
     throw error;
   }
 }
@@ -17,7 +20,7 @@ async function updatePkmn(data) {
 async function handler(req, res) {
   try {
     console.log(req.body);
-    let data = await updatePkmn(req.body);
+    let data = await deletePkmn(req.body);
 
     console.log(data);
     if (data.error) {
@@ -27,7 +30,7 @@ async function handler(req, res) {
 
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: "Failed to update Pokémon" });
+    res.status(500).json({ error: "Failed to retrieve Pokémon" });
   }
 }
 

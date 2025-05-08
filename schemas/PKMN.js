@@ -3,9 +3,18 @@ const { Schema } = mongoose;
 
 const PkmnSchema = new Schema({
   id_dex: Number,
+  ranking: Number,
   attacks: [Number],
   trainer_id: Number,
+  base_stats: [{
+    name:String,
+    value:Number,
+    potential:Number,
+    color:String,
+  }],
   nickname: String,
+  battles_won: String,
+  obs: String,
   ranges: [{
     name:String,
     value:Number,
