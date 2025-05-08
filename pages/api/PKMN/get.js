@@ -20,6 +20,8 @@ async function randomFix(data){
       // element.base_stats = element.ranges;
       element.base_stats = [];
       element.battles_won = 0;
+      element.hp = 0;
+      element.ability = '';
       element.obs = '';
     });
 

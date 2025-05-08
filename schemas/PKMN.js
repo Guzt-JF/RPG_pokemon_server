@@ -5,6 +5,7 @@ const PkmnSchema = new Schema({
   id_dex: Number,
   ranking: Number,
   attacks: [Number],
+  ability: String,
   trainer_id: Number,
   base_stats: [{
     name:String,
@@ -13,8 +14,9 @@ const PkmnSchema = new Schema({
     color:String,
   }],
   nickname: String,
-  battles_won: String,
+  battles_won: Number,
   obs: String,
+  total_hp: Number,
   ranges: [{
     name:String,
     value:Number,
@@ -23,6 +25,6 @@ const PkmnSchema = new Schema({
 });
 
 // Check if the model already exists before defining it
-const Pkmn = mongoose.models.Pkmn || mongoose.model("Pkmn", PkmnSchema);
+const Pkmn = mongoose.models.Pkmns || mongoose.model("Pkmns", PkmnSchema);
 
 export default Pkmn;

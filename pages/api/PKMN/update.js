@@ -6,6 +6,7 @@ async function updatePkmn(data) {
   try {
     // Find the Pokémon by ID and update its data
     const result = await Pkmn.findByIdAndUpdate(data.id, data, { new: true });
+    console.log("Updated Pokémon:", data);
 
     return result;
   } catch (error) {
@@ -16,15 +17,14 @@ async function updatePkmn(data) {
 
 async function handler(req, res) {
   try {
-    console.log(req.body);
     let data = await updatePkmn(req.body);
 
-    console.log(data);
     if (data.error) {
       res.status(400).json({ error: data.error });
       return;
     }
 
+    // console.log("Updated Pokémon:", data);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: "Failed to update Pokémon" });
