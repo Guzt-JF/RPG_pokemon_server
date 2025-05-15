@@ -14,6 +14,7 @@ async function getTrainer(query) {
 
 async function handler(req, res) {
   try {
+    console.log("Request body:", req.body);
     let data = await getTrainer(req.body);
     console.log(data);
 

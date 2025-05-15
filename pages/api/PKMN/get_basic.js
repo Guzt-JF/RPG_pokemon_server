@@ -5,6 +5,11 @@ import Pkmn from "../../../schemas/PKMN.js";
 async function getPkmn(query) {
   try {
     // Find the Pokémon based on the query
+    console.log(query);
+    console.log(query.trainer_id);
+    if (query.trainer_id == 0) {
+      return await Pkmn.find({}, "id_dex id nickname trainer_id");
+    }
     return await Pkmn.find(query, "id_dex id nickname trainer_id");
   } catch (error) {
     console.error("Error retrieving Pokémon:", error);
@@ -16,7 +21,6 @@ async function getPkmn(query) {
 async function handler(req, res) {
   try {
     let data = await getPkmn(req.body);
-    console.log(data);
 
     if (!data) {
       res.status(404).json({ error: "Pokémon not found" });
